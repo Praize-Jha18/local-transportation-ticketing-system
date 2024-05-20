@@ -3,23 +3,23 @@ import './App.css'
 function Header() {
 
     return (
-        <div class="container">
-	<div class="card w-50 mx-auto my-5">
-		<div class="card-header text-center">User Login</div>
-		<div class="card-body">
+        <div className="container">
+	<div className="card w-50 mx-auto my-5">
+		<div className="card-header text-center">User Login</div>
+		<div className="card-body">
 			<form action="login" method="post">
-				<div class="form-group">
+				<div className="form-group">
 				<label>Email</label>
-				<input class="form-control" name="email" type="email" required />
+				<input className="form-control" name="email" type="email" required />
 				</div>
 				
-				<div class="form-group"> 
+				<div className="form-group"> 
 				<label>Password</label>
-				<input class="form-control" name="login-password" type="password" required />
+				<input className="form-control" name="login-password" type="password" required />
 				</div>
 				<br/>
-				<div class="text-center">
-					<button type="submit" class="btn btn-primary">Login</button>
+				<div className="text-center">
+					<button type="submit" className="btn btn-primary">Login</button>
 				</div>
 			</form>
 		</div>
