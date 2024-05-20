@@ -3,8 +3,8 @@ import Navbar from "./navbar"
 function App() {
   return(
     <>
-    <Navbar />
-   <Header />
+      <Navbar />
+      <Header />
    </>
   );
 }
