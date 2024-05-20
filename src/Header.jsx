@@ -39,10 +39,9 @@ function Header() {
 					className="btn btn-primary" 
 					onClick={ () =>
 						console.log("Value is: " + email)
-					}>Login</button>
+					}
+				>Login</button>
 			</div>
-
-			
 
 		</div>
 	</div>
