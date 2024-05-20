@@ -14,14 +14,14 @@ function Navbar() {
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="index.jsp">Home</a>
         </li>
-        	<li className="nav-item">
+          <li className="nav-item">
             <a className="nav-link" href="orders.jsp">Book a ride</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="logout">Avaliable Routes</a>
           </li>
          
-        	<li className="nav-item">
+          <li className="nav-item">
             <a className="nav-link" href="login.jsp">LogOut</a>
           </li>
          
