@@ -33,20 +33,16 @@ function Header() {
 				}
 			/>
 
-			{/* <TextField 
-				label={"Password"} 
-				placeHolder={"Enter Password"} 
-				type={"password"} 
-			/> */}
-
 			<br/>
 			<div className="text-center">
-				{/* <button 
+				<button
 					className="btn btn-primary" 
-					onClick={
-						alert("Value is: " + email)
-					}>Login</button> */}
+					onClick={ () =>
+						console.log("Value is: " + email)
+					}>Login</button>
 			</div>
+
+			
 
 		</div>
 	</div>
