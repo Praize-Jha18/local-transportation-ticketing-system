@@ -20,45 +20,45 @@ function Header() {
     }
 	}
 
-    return (
-      <div className="container">
-        <div className="card w-50 mx-auto my-5">
-          <div className="card-header text-center">User Login</div>
-          <div className="card-body">
+  return (
+    <div className="container">
+      <div className="card w-50 mx-auto my-5">
+        <div className="card-header text-center">User Login</div>
+        <div className="card-body">
 
-            <TextField 
-              label={"Email"} 
-              placeHolder={"Enter email address"} 
-              type={"email"}
-              defaultValue={email}
-              onChange={ 
-                (input) => { setEmail(input) }
-              }
-            />
+          <TextField 
+            label={"Email"} 
+            placeHolder={"Enter email address"} 
+            type={"email"}
+            defaultValue={email}
+            onChange={ 
+              (input) => { setEmail(input) }
+            }
+          />
 
-            <TextField 
-              label={"Password"} 
-              placeHolder={"Enter Password"} 
-              type={"password"}
-              defaultValue={ password }
-              onChange={ 
-                (input) => { setPassword(input) }
-              }
-            />
+          <TextField 
+            label={"Password"} 
+            placeHolder={"Enter Password"} 
+            type={"password"}
+            defaultValue={ password }
+            onChange={ 
+              (input) => { setPassword(input) }
+            }
+          />
 
-            <br/>
-            <div className="text-center">
-              <button
-                className="btn btn-primary" 
-                onClick={ handleLogin }
-              >Login</button>
-            </div>
-
+          <br/>
+          <div className="text-center">
+            <button
+              className="btn btn-primary" 
+              onClick={ handleLogin }
+            >Login</button>
           </div>
+
         </div>
-        <ToastContainer />
       </div>
-    );
+      <ToastContainer />
+    </div>
+  );
 
 }
 
