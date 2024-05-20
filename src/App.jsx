@@ -5,7 +5,7 @@ function App() {
     <>
       <Navbar />
       <Header />
-   </>
+    </>
   );
 }
 
