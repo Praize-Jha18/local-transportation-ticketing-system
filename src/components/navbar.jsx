@@ -1,4 +1,4 @@
-import LiTag from "./components/li.tag";
+import LiTag from "./li.tag";
 import { Outlet } from "react-router-dom";
 
 
