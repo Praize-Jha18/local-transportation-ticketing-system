@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function LiTag({ destination, label }) {
   return (
     <li className="nav-item">
-      <a className="nav-link active" aria-current="page" href={ destination }>{ label }</a>
+      {/* <Link className="nav-link active" aria-current="page" href={ destination }>{ label }</Link> */}
+      <Link className="nav-link active" aria-current="page" to={ destination }>{ label }</Link>
     </li>
   )
 }
