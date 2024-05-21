@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { isValidEmail } from '../utils/util';
 import { TextField } from '../components/textfield';
+// import axios from 'axios';
 
 function Login() {
 
@@ -16,7 +17,17 @@ function Login() {
 			toast.error("Invalid email address specified")
 		} else {
       // const build_type = process.env.BUILD_TYPE
-			toast.success("On the go....")
+      // console.log(build_type)
+      /*
+      axios.get(
+        `https://jsonplaceholder.typicode.com/posts`
+      )
+      .then((response) => {
+          const posts = response.data
+          console.log(posts)
+      }); 
+      */
+      toast.success("On the go....")
     }
 	}
 
