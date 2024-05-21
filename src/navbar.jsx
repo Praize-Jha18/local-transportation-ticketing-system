@@ -1,8 +1,10 @@
 import LiTag from "./components/li.tag";
+import { Outlet } from "react-router-dom";
 
 
 function Navbar() {
   return(
+    <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <a className="navbar-brand" href="index.jsp">Rapid Transit</a>
@@ -14,14 +16,16 @@ function Navbar() {
         <li className="nav-item">
         <a className="nav-link active" aria-current="page" href="index.jsp">Home</a>
         </li>
-        <LiTag label={"Profile"} destination={"index.html"} />
-        <LiTag label={"Services"} destination={"index.html"} />
-        <LiTag label={"Aout"} destination={"index.html"} />
+        <LiTag label={"Profile"} destination={"/profile"} />
+        <LiTag label={"Services"} destination={"/services"} />
+        <LiTag label={"Login"} destination={"/login"} />
         {/* Log in/out component */}
         </ul>
         </div>
       </div>
     </nav>
+    <Outlet />
+    </>
   );
 }
 
