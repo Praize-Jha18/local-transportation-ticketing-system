@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export const TextField = ({ label, placeHolder, type, defaultValue, onChange }) => {
-
+export const TextField = ({ label, placeHolder, type, defaultValue, onChange, disabled = false }) => {
     
 	const [value, setValue] = useState(defaultValue)
 
@@ -20,7 +19,7 @@ export const TextField = ({ label, placeHolder, type, defaultValue, onChange }) 
                 type={type}
                 value={value}
                 onChange={handleChange}
-                required
+                disabled={ disabled }
             />
         </div>
     )
@@ -31,5 +30,6 @@ TextField.propTypes = {
     placeHolder: PropTypes.string,
     defaultValue: PropTypes.string,
     type: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    disabled: PropTypes.bool
 }
