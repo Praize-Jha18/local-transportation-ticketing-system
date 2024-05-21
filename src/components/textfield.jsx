@@ -15,7 +15,7 @@ export const TextField = ({ label, placeHolder, type, defaultValue, onChange }) 
         <div className="form-group">
             <label>{label}</label>
             <input 
-                className="form-control" 
+                className="form-control my-2" 
                 placeholder={placeHolder} 
                 type={type}
                 value={value}
