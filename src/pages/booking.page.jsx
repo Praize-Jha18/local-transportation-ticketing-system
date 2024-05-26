@@ -2,7 +2,7 @@ import React from "react";
 const Booking = () => {
 
   return (
-  <div className="container mt-5 d-flex flex-row-reverse" >
+  <div className="flex-item mt-5 " >
       <div className="card" style={{ borderRadius: '20px', backgroundColor: '#1D1F6A' }}>
         <div className="card-body">
           <ul className="nav nav-tabs">
@@ -26,6 +26,7 @@ const Booking = () => {
                     <option>Terminal 2</option>
                   </select>
                 </div>
+                <br/> 
                 <div className="form-group">
                   <label htmlFor="arrivalTerminal">Arrival Terminal</label>
                   <select className="form-control" id="arrivalTerminal">
@@ -33,6 +34,8 @@ const Booking = () => {
                     <option>Terminal 2</option>
                   </select>
                 </div>
+                <br/>
+            
                 <div className="form-group">
                   <label htmlFor="seats">Seats</label>
                   <select className="form-control" id="seats">
@@ -40,7 +43,9 @@ const Booking = () => {
                     <option>2</option>
                   </select>
                 </div>
+                <br/> 
                 <button type="submit" className="btn btn-light" style={{ width: '100%' }}>Proceed</button>
+                <br/> <br/>
               </form>
             </div>
 
@@ -52,19 +57,20 @@ const Booking = () => {
                     <option>Point 1</option>
                     <option>Point 2</option>
                   </select>
-                </div>
+                </div>  <br/>
                 <div className="form-group">
                   <label htmlFor="arrival">Arrival</label>
                   <select className="form-control" id="arrival">
                     <option>Point 1</option>
                     <option>Point 2</option>
                   </select>
-                </div>
+                </div>  <br/>
                 <div className="form-group">
                   <label htmlFor="date">Departure Date</label>
                   <input type="date" className="form-control" id="date" />
-                </div>
+                </div>  <br/>
                 <button type="submit" className="btn btn-light" style={{ width: '100%' }}>Proceed</button>
+                <br/>
               </form>
             </div>
 
