@@ -170,8 +170,8 @@ function SignUp() {
             }
           />
         </div>
-        <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px'  }}>Sign Up</button>
-        <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  }}>Login</button>
+        <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }}>Sign Up</button>
+        <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
       </form>
     </div>
     </div>
