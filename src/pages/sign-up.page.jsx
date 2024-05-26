@@ -43,8 +43,8 @@ function SignUp() {
   }
 
   return (
-    <div className='container-fluid' style={{backgroundColor: '#2c44ac', width:'100%'}}>
-    <div className="container mt-5" style={{ backgroundColor: '#4B67E3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
+    // <div className='container' style={{backgroundColor: '#2c44ac', width:'100%'}}>
+    <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
       <form>
         <div className="form-row mb-3">
@@ -174,7 +174,7 @@ function SignUp() {
         <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
       </form>
     </div>
-    </div>
+    // </div>
   );
 
 }

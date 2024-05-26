@@ -9,7 +9,7 @@ const Profile = () => {
   const [name, setName] = useState("")
   return (
 
-    <div className="container mt-5" style={{ color: 'white' }}>
+    <div className="container mt-5" style={{ color: 'white' }} >
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>PROFILE</h1>
         <div className="wallet" style={{ backgroundColor: '#4B67E3', padding: '10px', borderRadius: '5px' }}>
