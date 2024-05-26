@@ -34,7 +34,7 @@ function Login() {
   return (
     <div className="container">
       <div className="card w-50 mx-auto my-5" style={{backgroundColor:'#4B62E3', borderRadius:'20px'}}>
-        <div className="card-header text-center" style={{color:'black', fontSize:'35px'}}>User Login</div>
+        <div className="card-header text-center" style={{color:'white', fontSize:'25px'}}>User Login</div>
         <div className="card-body">
 
           <TextField
