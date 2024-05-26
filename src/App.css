@@ -1,3 +1,8 @@
 .card {
     box-shadow: 5px 5px 6px hsla(0, 71%, 27%, 0.4);
 }
+
+.btn-primary:hover {
+    background-color: #4B67E3;
+    color: #FFFFFF;
+}

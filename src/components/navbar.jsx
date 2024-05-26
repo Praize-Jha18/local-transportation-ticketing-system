@@ -19,6 +19,7 @@ function Navbar() {
         <LiTag label={"Profile"} destination={"/profile"} />
         <LiTag label={"Services"} destination={"/services"} />
         <LiTag label={"Login"} destination={"/login"} />
+        <LiTag label={"Sign Up"} destination={"/sign-up"} />
         {/* Log in/out component */}
         </ul>
         </div>

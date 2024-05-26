@@ -7,6 +7,7 @@ import Profile from "./pages/profile.page";
 import Bus from "./pages/bus.page";
 import Booking from "./pages/booking.page";
 import SignUp from "./pages/sign-up.page";
+import './App.css'
 
 function App() {
   return(
