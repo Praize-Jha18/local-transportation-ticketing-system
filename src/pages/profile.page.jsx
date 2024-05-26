@@ -36,7 +36,7 @@ const Profile = () => {
                                 <label htmlFor="phone2">Phone Number:</label>
                                 <input type="tel" className="form-control" id="phone2" placeholder="Phone Number" />
                             </div>
-                            <button type="submit" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Save Changes</button>
+                            <button type="submit" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px' }}>Save Changes</button>
                             <button type="button" className="btn btn-secondary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Discard</button>
                         </form>
                     </div>
