@@ -5,8 +5,9 @@ import Login from "./pages/login.page";
 import Navbar from "./components/navbar";
 import Profile from "./pages/profile.page";
 import Bus from "./pages/bus.page";
-import Booking from "./pages/booking.page";
+// import Booking from "./pages/booking.page";
 import SignUp from "./pages/sign-up.page";
+import './App.css'
 
 function App() {
   return(
@@ -22,7 +23,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/manage-bus" element={<Bus />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/booking" element={<Home />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

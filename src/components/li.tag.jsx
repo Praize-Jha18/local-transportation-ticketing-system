@@ -5,7 +5,7 @@ function LiTag({ destination, label }) {
   return (
     <li className="nav-item">
       {/* <Link className="nav-link active" aria-current="page" href={ destination }>{ label }</Link> */}
-      <Link className="nav-link active" aria-current="page" to={ destination }>{ label }</Link>
+      <Link className="nav-link active" style={{color:'white'}} aria-current="page" to={ destination }>{ label }</Link>
     </li>
   )
 }
