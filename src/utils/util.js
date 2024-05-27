@@ -4,7 +4,7 @@ export function isValidEmail(email) {
 }
 
 export function isValidName(name) {
-    const regex = /^[a-zA-Z]{5,}$/;
+    const regex = /^[a-zA-Z]{2,}$/;
     return regex.test(name);
 }
 
