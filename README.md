@@ -20,7 +20,7 @@ cd ../../**/desired-directory
 node -v
 ```
 
-### Step 3: Install [Node.js](https://nodejs.org/en/download/package-manager/current) if not installed
+### Step 3: Download & Install [Node.js](https://nodejs.org/en/download/prebuilt-installer) if not installed
 ```
 git clone https://github.com/Praize-Jha18/local-transportation-ticketing-system
 ```
