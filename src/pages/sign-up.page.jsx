@@ -75,7 +75,6 @@ function SignUp() {
 
   const handleLogin = () => {
     if (validateFields()) {
-      toast.success("Successful!")
       const reqBody = {
         fname,
         lname,
@@ -97,7 +96,7 @@ function SignUp() {
       //     const posts = response.data
       //     console.log(posts)
       // });
-      toast.success("On the go....")
+      toast.success("Successful! On the go...")
     }
   }
 
