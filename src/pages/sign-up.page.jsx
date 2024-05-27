@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { isValidEmail } from '../utils/util';
+import { isValidAddress, isValidEmail, isValidName, isValidPhone } from '../utils/util';
 import { TextField } from '../components/textfield';
 // import axios from 'axios';
 import NaijaStates, { lgas } from 'naija-state-local-government';
@@ -15,7 +15,7 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [fname, setFName] = useState("")
   const [lname, setLName] = useState("")
-  const [gender, setGender] = useState("")
+  const [gender, setGender] = useState("Male")
   const [DOB, setDOB] = useState("")
   const [phoneno, setphoneno] = useState("")
   const [address, setaddress] = useState("")
@@ -42,13 +42,34 @@ function SignUp() {
 
   const validateFields = () => {
     var isValid = true
-    if (!email || !password) {
+    if (!email || !password || !gender || !DOB || 
+      !phoneno || !address || !state) {
       isValid = false
       toast.error("Field(s) can not be blank")
-    } else if (!isValidEmail(email)) {
+      return
+    } 
+    if (!isValidEmail(email)) {
       isValid = false
       toast.error("Invalid email address specified")
-    } 
+    } else if (!isValidPhone(phoneno)) {
+      isValid = false
+      toast.error("Invalid nigerian phone number")
+    } else if (!isValidName(fname)) {
+      isValid = false
+      toast.error("Invalid first name")
+    } else if (!isValidName(lname)) {
+      isValid = false
+      toast.error("Invalid last name")
+    } else if (!lga) {
+      isValid = false
+      toast.error("Kindly select local government")
+    } else if (!isValidAddress(address)) {
+      isValid = false
+      toast.error("Invalid Address")
+    } else if (password != confirmPassword) {
+      isValid = false
+      toast.error("Passwords mismatch")
+    }
     return isValid
   }
 
