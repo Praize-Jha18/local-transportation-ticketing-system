@@ -168,7 +168,18 @@ function SignUp() {
           </select>
         </div>
         <div className="form-group mb-3">
-          <label htmlFor="formGender">States</label>
+        <TextField
+            label={"Address"} 
+            placeHolder={"Enter Home Address"} 
+            type={"text"}
+            defaultValue={address}
+            onChange={ 
+              (input) => { setaddress(input) }
+            }
+          />
+        </div>
+        <div className="form-group mb-3">
+          <label htmlFor="formGender">Select State</label>
           <Select
             className="form-control"
             defaultValue={state}
@@ -185,17 +196,6 @@ function SignUp() {
             onChange={setLGA}
             options={localGovernments}
             isSearchable={false}
-          />
-        </div>
-        <div className="form-group mb-3">
-        <TextField
-            label={"Address"} 
-            placeHolder={"Enter Home Address"} 
-            type={"text"}
-            defaultValue={address}
-            onChange={ 
-              (input) => { setaddress(input) }
-            }
           />
         </div>
         <div className="form-group mb-3">
