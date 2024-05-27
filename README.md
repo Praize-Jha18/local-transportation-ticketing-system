@@ -58,5 +58,5 @@ npm run dev
 The project should be running on port 5173
 Open the link in a browser
 
-#### A google form should be atached here soon to get your meaningful contributions.
+#### Kindly fill this [form](https://docs.google.com/forms/d/e/1FAIpQLScCST8vmOEbXC2EOenpTHfJPLAFvl_aOL82PHy19YeZvDNR9A/viewform?usp=sf_link) to submit your meaningful contributions.
 Criticism shall be welcomed.
