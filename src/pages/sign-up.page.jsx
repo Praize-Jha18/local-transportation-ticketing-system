@@ -12,9 +12,10 @@ function SignUp() {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [fname, setFName] = useState("")
   const [lname, setLName] = useState("")
-  // const [gender, setGender] = useState("")
+  const [gender, setGender] = useState("")
   const [DOB, setDOB] = useState("")
   const [phoneno, setphoneno] = useState("")
   const [address, setaddress] = useState("")
@@ -40,10 +41,12 @@ function SignUp() {
   }, [state])
 
   const validateFields = () => {
-    var isValid = false
+    var isValid = true
     if (!email || !password) {
+      isValid = false
       toast.error("Field(s) can not be blank")
     } else if (!isValidEmail(email)) {
+      isValid = false
       toast.error("Invalid email address specified")
     } 
     return isValid
@@ -51,9 +54,19 @@ function SignUp() {
 
   const handleLogin = () => {
     if (validateFields()) {
-      // console.log(NaijaStates.all());
-      // console.log(NaijaStates.states());
-      // console.log(NaijaStates.lgas("Oyo"))
+      toast.success("Successful!")
+      const reqBody = {
+        fname,
+        lname,
+        gender,
+        DOB,
+        phoneno,
+        address,
+        lga,
+        state,
+        email
+      }
+      console.log(reqBody)
       // const build_type = process.env.BUILD_TYPE
       // console.log(build_type)
       // axios.get(
@@ -129,11 +142,9 @@ function SignUp() {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="formGender">Gender</label>
-          <select className="form-select" id="formGender">
-            <option>Gender</option>
+          <select className="form-select form-control" id="formGender">
             <option>Male</option>
             <option>Female</option>
-            <option>Other</option>
           </select>
         </div>
         <div className="form-group mb-3">
@@ -183,9 +194,9 @@ function SignUp() {
             label={"Confirm Password"} 
             placeHolder={"Enter Password"} 
             type={"password"}
-            defaultValue={password}
+            defaultValue={confirmPassword}
             onChange={ 
-              (input) => { setPassword(input) }
+              (input) => { setConfirmPassword(input) }
             }
           />
         </div>
