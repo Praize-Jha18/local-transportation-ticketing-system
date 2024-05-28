@@ -13,9 +13,7 @@ function SignUp() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
-  const [fname, setFName] = useState("")
-  const [lname, setLName] = useState("")
-  const [gender, setGender] = useState("Male")
+  const [fullName, setFullName] = useState("")
   const [DOB, setDOB] = useState("")
   const [phoneno, setphoneno] = useState("")
   const [address, setaddress] = useState("")
@@ -31,6 +29,11 @@ function SignUp() {
   }, [])
 
   useEffect(() => {
+    const val = process.env.BUILD_TYPE
+    console.log(val)
+  })
+
+  useEffect(() => {
     if (state) {
       setLGA("")
       const mappedLGAs = []
@@ -42,8 +45,8 @@ function SignUp() {
 
   const validateFields = () => {
     var isValid = true
-    if (!email || !password || !gender || !DOB || 
-      !phoneno || !address || !state) {
+    if (!email || !password || !DOB || 
+      !phoneno || !address || !state || !fullName) {
       isValid = false
       toast.error("Field(s) can not be blank")
       return
@@ -54,12 +57,9 @@ function SignUp() {
     } else if (!isValidPhone(phoneno)) {
       isValid = false
       toast.error("Invalid nigerian phone number")
-    } else if (!isValidName(fname)) {
+    } else if (!isValidName(fullName)) {
       isValid = false
-      toast.error("Invalid first name")
-    } else if (!isValidName(lname)) {
-      isValid = false
-      toast.error("Invalid last name")
+      toast.error("Invalid full name")
     } else if (!lga) {
       isValid = false
       toast.error("Kindly select local government")
@@ -76,17 +76,7 @@ function SignUp() {
   const handleLogin = async () => {
     if (validateFields()) {
       const reqBody = {
-        // fname,
-        // lname,
-        // gender,
-        // DOB,
-        // phoneno,
-        // address,
-        // lga,
-        // state,
-        // email
-        "firstName": fname,
-        "lastName": lname,
+        "fullName": fullName,
         "phoneNumber": phoneno,
         "email":email,
         "birthDate": DOB,
@@ -96,7 +86,7 @@ function SignUp() {
         "nlastName": "Test",
         "state": state.value,
         "lga": lga.value,
-        "address": "23,Festac street",
+        "address": address,
         "nphoneNumber": phoneno
       }
       
@@ -115,28 +105,15 @@ function SignUp() {
     <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
         <div className="form-row mb-3">
-          <div className="col-sm-3 col-md-6 col-lg-12">
-            <TextField
-              label={"First Name"}
-              placeHolder={"Enter First Name"}
-              type={"text"}
-              defaultValue={fname}
-              onChange={
-                (input) => { setFName(input) }
-              }
-            />
-          </div>
-          <div className="col">
-            <TextField
-              label={"Last Name"}
-              placeHolder={"Enter Last Name"}
-              type={"text"}
-              defaultValue={lname}
-              onChange={
-                (input) => { setLName(input) }
-              }
-            />
-          </div>
+          <TextField
+            label={"First Name"}
+            placeHolder={"Enter First Name"}
+            type={"text"}
+            defaultValue={fullName}
+            onChange={
+              (input) => { setFullName(input) }
+            }
+          />
         </div>
         <div className="form-group mb-3">
           <TextField
