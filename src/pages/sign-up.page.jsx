@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { isValidAddress, isValidEmail, isValidName, isValidPhone } from '../utils/util';
 import { TextField } from '../components/textfield';
-// import axios from 'axios';
+import axios from 'axios';
 import NaijaStates, { lgas } from 'naija-state-local-government';
 import Select from "react-select";
 import '../index.css'
@@ -73,30 +73,41 @@ function SignUp() {
     return isValid
   }
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (validateFields()) {
       const reqBody = {
-        fname,
-        lname,
-        gender,
-        DOB,
-        phoneno,
-        address,
-        lga,
-        state,
-        email
+        // fname,
+        // lname,
+        // gender,
+        // DOB,
+        // phoneno,
+        // address,
+        // lga,
+        // state,
+        // email
+        "firstName": fname,
+        "lastName": lname,
+        "phoneNumber": phoneno,
+        "email":email,
+        "birthDate": DOB,
+        "password": "Toj9i&iuiuhihijh",
+        "walletNumber": "0038282781",
+        "nfirstName":"Test",
+        "nlastName": "Test",
+        "state": state.value,
+        "lga": lga.value,
+        "address": "23,Festac street",
+        "nphoneNumber": phoneno
       }
-      console.log(reqBody)
-      // const build_type = process.env.BUILD_TYPE
-      // console.log(build_type)
-      // axios.get(
-      //   `https://jsonplaceholder.typicode.com/posts`
-      // )
-      // .then((response) => {
-      //     const posts = response.data
-      //     console.log(posts)
-      // });
-      toast.success("Successful! On the go...")
+      
+      axios.post(
+        'http://localhost:8080/api/v1/signup',{ ...reqBody },
+        { headers: { "Content-Type": "Application/json" } }
+      )
+      .then((responseData) => { toast.success(responseData.data.response) })
+      .catch((errorData) => { 
+        toast.error(errorData.response.data) 
+      })
     }
   }
 
@@ -104,7 +115,7 @@ function SignUp() {
     <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
         <div className="form-row mb-3">
-          <div className="col">
+          <div className="col-sm-3 col-md-6 col-lg-12">
             <TextField
               label={"First Name"}
               placeHolder={"Enter First Name"}
