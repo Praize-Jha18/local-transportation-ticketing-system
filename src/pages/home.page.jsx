@@ -1,10 +1,10 @@
 import React from 'react';
 import Booking from './booking.page';
-import bgimage from '../assets/Busbg.jpg'
+import image from '/src/assets/Busbg.jpg'
 
 const Home = () => {
   return(
-<div style={{ backgroundImage:'url(/src/assets/Busbg.jpg)', backgroundColor:'none', backgroundSize: 'cover', height: '100vh', color: 'white' }}>
+<div style={{ backgroundImage:{image}, backgroundColor:'none', backgroundSize: 'cover', height: '100vh', color: 'white' }}>
         <h1>WELCOME UserName</h1>
       <div className="container flex-container text-center mt-5 ">
         <div className='flex-item'>
