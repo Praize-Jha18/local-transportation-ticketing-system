@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { TextField } from '../components/textfield';
 import { isValidEmail } from '../utils/util';
+import image from '/src/assets/Busbg.jpg'
 const Profile = () => {
 
   const [email, setEmail] = useState("")
@@ -19,7 +20,7 @@ const Profile = () => {
       <div className="row">
         <div className="col-md-4 text-center">
           <div className="profile-img" style={{ backgroundColor: '#4B67E3', padding: '20px', borderRadius: '10px' }}>
-            <img src='/src/assets/Busbg.jpg' alt="Profile" style={{ borderRadius: '50%', width: '200px', height: '160px' }} /> <br/>
+            <img src={image} alt="Profile" style={{ borderRadius: '50%', width: '200px', height: '160px' }} /> <br/>
             <button className="btn btn-primary mt-3" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Edit</button>
           </div>
         </div>
