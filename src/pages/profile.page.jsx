@@ -19,7 +19,7 @@ const Profile = () => {
       <div className="row">
         <div className="col-md-4 text-center">
           <div className="profile-img" style={{ backgroundColor: '#4B67E3', padding: '20px', borderRadius: '10px' }}>
-            <img src="../assets/user-regular-24.png" alt="Profile" style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
+            <img src='/src/assets/Busbg.jpg' alt="Profile" style={{ borderRadius: '50%', width: '200px', height: '160px' }} /> <br/>
             <button className="btn btn-primary mt-3" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Edit</button>
           </div>
         </div>
