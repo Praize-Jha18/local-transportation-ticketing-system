@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { isValidEmail } from '../utils/util';
 import { TextField } from '../components/textfield';
+
 // import axios from 'axios';
 
 function Login() {
@@ -12,6 +13,7 @@ function Login() {
 
 	const handleLogin = () => {
 		if (!email || !password) {
+      
 			toast.error("Field(s) can not be blank")
 		} else if (!isValidEmail(email)) {
 			toast.error("Invalid email address specified")
@@ -68,6 +70,7 @@ function Login() {
         </div>
       </div>
       <ToastContainer />
+     
     </div>
   );
 
