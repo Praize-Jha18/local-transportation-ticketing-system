@@ -8,6 +8,7 @@ import NaijaStates, { lgas } from 'naija-state-local-government';
 import Select from "react-select";
 import '../index.css'
 import { BANKS_URL, HEADER, MIN_YEARS, RESOLVE_ACCOUNT_URL } from '../../constants';
+import { CustomModal } from '../components/new-modal';
 
 function SignUp() {
 
@@ -26,6 +27,7 @@ function SignUp() {
   const [accountNumber, setAccountNumber] = useState("")
   const [accountNumberDisabled, setAccountNumberDisabled] = useState(false)
   const [bankCode, setBankCode] = useState()
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const mappedStates = []
@@ -34,14 +36,19 @@ function SignUp() {
   }, [])
 
   useEffect(() => {
+    setShowModal(true)
     axios.get(BANKS_URL, { headers: HEADER })
     .then(data => {
       const result = data.data.data
       const resolvedBanks = []
       result.forEach(bank =>resolvedBanks.push({ label: bank.name, value: bank.code }))
       setBanks(resolvedBanks)
+      setShowModal(false)
     })
-    .catch(error => { console.log(error) })    
+    .catch(error => { 
+      console.log(error)
+      setShowModal(false)
+    })    
   }, [])
 
   useEffect(() => {
@@ -104,12 +111,18 @@ function SignUp() {
         "nphoneNumber": phoneno
       }
       
+      setShowModal(true)
+
       axios.post(
         'http://localhost:8080/api/v1/signup',{ ...reqBody },
         { headers: { "Content-Type": "Application/json" } }
       )
-      .then((responseData) => { toast.success(responseData.data.response) })
-      .catch((errorData) => { 
+      .then((responseData) => { 
+        setShowModal(false)
+        toast.success(responseData.data.response) 
+      })
+      .catch((errorData) => {
+        setShowModal(false)
         toast.error(errorData.response.data) 
       })
     }
@@ -118,6 +131,7 @@ function SignUp() {
   useEffect(() => {
     if(accountNumber.length == 10 && bankCode) {
       setAccountNumberDisabled(true)
+      setShowModal(true)
       const url = `${RESOLVE_ACCOUNT_URL}account_number=${accountNumber}&bank_code=${bankCode.value}`
       axios.get(
         url, 
@@ -126,10 +140,12 @@ function SignUp() {
         const result = data.data
         toast.success(result.message)
         setFullName(result.data.account_name)
+        setShowModal(false)
         setAccountNumberDisabled(false)
       })
       .catch(error => {
         setAccountNumberDisabled(false)
+        setShowModal(false)
         toast.error(error.response.data.message)
       })
     } else {
@@ -258,6 +274,7 @@ function SignUp() {
         </div>
         <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }} onClick={ handleRegister }>Sign Up</button>
         <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
+        { showModal && <CustomModal title={ "Rapid Transit" } message={ "Loading... please wait" } show={ showModal } /> }
       <ToastContainer/>
     </div>
   );
