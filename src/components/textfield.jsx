@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export const TextField = ({ label, placeHolder, type, defaultValue, onChange, disabled = false }) => {
+export const TextField = ({ label, placeHolder, type, defaultValue, onChange, disabled = false, length = 70 }) => {
     
 	const [value, setValue] = useState(defaultValue)
 
@@ -18,6 +18,7 @@ export const TextField = ({ label, placeHolder, type, defaultValue, onChange, di
                 placeholder={placeHolder} 
                 type={type}
                 value={value}
+                maxLength={ length}
                 onChange={handleChange}
                 disabled={ disabled }
             />
