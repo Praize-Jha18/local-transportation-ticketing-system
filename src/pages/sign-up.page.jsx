@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { isValidAddress, isValidEmail, isValidName, isValidPhone } from '../utils/util';
-import { TextField } from '../components/textfield';
+import { TextField, TextFieldDisabled } from '../components/textfield';
 import axios from 'axios';
 import NaijaStates, { lgas } from 'naija-state-local-government';
 import Select from "react-select";
 import '../index.css'
+import { BANKS_URL, HEADER, RESOLVE_ACCOUNT_URL } from '../../constants';
 
 function SignUp() {
 
@@ -21,6 +22,10 @@ function SignUp() {
   const [state, setState] = useState("")
   const [localGovernments, setLocalGovernments] = useState()
   const [states, setStates] = useState()
+  const [banks, setBanks] = useState()
+  const [accountNumber, setAccountNumber] = useState("")
+  const [accountNumberDisabled, setAccountNumberDisabled] = useState(false)
+  const [bankCode, setBankCode] = useState()
 
   useEffect(() => {
     const mappedStates = []
@@ -29,9 +34,15 @@ function SignUp() {
   }, [])
 
   useEffect(() => {
-    const val = process.env.BUILD_TYPE
-    console.log(val)
-  })
+    axios.get(BANKS_URL, { headers: HEADER })
+    .then(data => {
+      const result = data.data.data
+      const resolvedBanks = []
+      result.forEach(bank =>resolvedBanks.push({ label: bank.name, value: bank.code }))
+      setBanks(resolvedBanks)
+    })
+    .catch(error => { console.log(error) })    
+  }, [])
 
   useEffect(() => {
     if (state) {
@@ -73,15 +84,15 @@ function SignUp() {
     return isValid
   }
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     if (validateFields()) {
       const reqBody = {
         "fullName": fullName,
         "phoneNumber": phoneno,
         "email":email,
         "birthDate": DOB,
-        "password": "Toj9i&iuiuhihijh",
-        "walletNumber": "0038282781",
+        "password": password,
+        "walletNumber": accountNumber,
         "nfirstName":"Test",
         "nlastName": "Test",
         "state": state.value,
@@ -101,20 +112,60 @@ function SignUp() {
     }
   }
 
+  useEffect(() => {
+    if(accountNumber.length == 10 && bankCode) {
+      setAccountNumberDisabled(true)
+      const url = `${RESOLVE_ACCOUNT_URL}account_number=${accountNumber}&bank_code=${bankCode.value}`
+      axios.get(
+        url, 
+        { headers: HEADER })
+      .then(data => {
+        const result = data.data
+        toast.success(result.message)
+        setFullName(result.data.account_name)
+        setAccountNumberDisabled(false)
+      })
+      .catch(error => {
+        setAccountNumberDisabled(false)
+        toast.error(error.response.data.message)
+      })
+    } else {
+      setFullName("")
+    }
+  }, [accountNumber, bankCode])
+
   return (
     <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
-        <div className="form-row mb-3">
-          <TextField
-            label={"First Name"}
-            placeHolder={"Enter First Name"}
-            type={"text"}
-            defaultValue={fullName}
-            onChange={
-              (input) => { setFullName(input) }
-            }
+        <div className="form-group mb-3">
+          <label htmlFor="formGender">Select Bank</label>
+          <Select
+            className="form-control"
+            // defaultValue={lga}
+            onChange={setBankCode}
+            options={banks}
+            isSearchable={true}
           />
         </div>
+        <div className="form-row mb-3">
+          <TextField
+            label={"Account Number"}
+            placeHolder={"Enter Account Number"}
+            type={"text"}
+            defaultValue={accountNumber}
+            length={ 10 }
+            disabled= { accountNumberDisabled }
+            onChange={ (input) => setAccountNumber(input) }
+          />
+        </div>
+        { fullName && <div className="form-row mb-3">
+          <TextFieldDisabled
+            label={"Full Name"}
+            placeHolder={"Enter Full Name"}
+            type={"text"}
+            value={fullName}
+          />
+        </div>}
         <div className="form-group mb-3">
           <TextField
             label={"Date Of Birth"}
@@ -147,13 +198,6 @@ function SignUp() {
               (input) => { setphoneno(input) }
             }
           />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="formGender">Gender</label>
-          <select className="form-select form-control" id="formGender">
-            <option>Male</option>
-            <option>Female</option>
-          </select>
         </div>
         <div className="form-group mb-3">
         <TextField
@@ -208,7 +252,7 @@ function SignUp() {
             }
           />
         </div>
-        <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }} onClick={ handleLogin }>Sign Up</button>
+        <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }} onClick={ handleRegister }>Sign Up</button>
         <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
       <ToastContainer/>
     </div>
