@@ -27,7 +27,7 @@ export const TextField = ({ label, placeHolder, type, defaultValue, onChange, di
 }
 
 
-export const TextFieldDisabled = ({ label, placeHolder, type, value }) => {
+export const TextFieldDisabled = ({ label = "", placeHolder = "", type = "text", value }) => {
     
     return (    
         <div className="form-group">
