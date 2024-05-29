@@ -6,15 +6,21 @@ export const Modal = () => {
     const [email, setEmail] = useState("")
     return (
         <>
-          <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h5 className="modal-title" id="exampleModalLabel">New message</h5>
-                      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div className="modal-body">
-                      <div className="mb-3">
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div className="mb-3">
                         <TextField
                           label={"Email"}
                           placeHolder={"Enter email address"}
@@ -34,14 +40,15 @@ export const Modal = () => {
                           <option>Option 4</option>
                         </select>
                       </div>
-                    </div>
-                    <div className="modal-footer">
-                      <button className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button className="btn btn-primary">Submit</button>
-                    </div>
-                  </div>
-                </div>
-            </div>
+                    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 {/* <div className="modal" tabIndex="-1">
   <div className="modal-dialog">
