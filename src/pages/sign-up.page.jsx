@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { isValidAddress, isValidEmail, isValidName, isValidPhone } from '../utils/util';
+import { isValidAddress, isValidAge, isValidEmail, isValidName, isValidPhone } from '../utils/util';
 import { TextField, TextFieldDisabled } from '../components/textfield';
 import axios from 'axios';
 import NaijaStates, { lgas } from 'naija-state-local-government';
 import Select from "react-select";
 import '../index.css'
-import { BANKS_URL, HEADER, RESOLVE_ACCOUNT_URL } from '../../constants';
+import { BANKS_URL, HEADER, MIN_YEARS, RESOLVE_ACCOUNT_URL } from '../../constants';
 
 function SignUp() {
 
@@ -71,6 +71,9 @@ function SignUp() {
     } else if (!isValidName(fullName)) {
       isValid = false
       toast.error("Invalid full name")
+    } else if (isValidAge(DOB)) {
+      isValid = false
+      toast.error("The selected date is less than the minimum age:", MIN_YEARS)
     } else if (!lga) {
       isValid = false
       toast.error("Kindly select local government")
@@ -194,6 +197,7 @@ function SignUp() {
             placeHolder={"Enter Phone Number"}
             type={"tel"}
             defaultValue={phoneno}
+            length={ 11 }
             onChange={
               (input) => { setphoneno(input) }
             }
