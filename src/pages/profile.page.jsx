@@ -3,11 +3,22 @@ import { useState } from 'react';
 import { TextField } from '../components/textfield';
 import { isValidEmail } from '../utils/util';
 import image from '/src/assets/Busbg.jpg'
+import { CustomModal } from '../components/new-modal';
 const Profile = () => {
 
   const [email, setEmail] = useState("")
   const [phoneno, setphoneno] = useState("")
   const [name, setName] = useState("")
+
+
+const openModal = () => {
+  console.log("clicked")
+  return (
+    <CustomModal/>
+  )
+  
+}
+ 
   return (
 
     <div className="container mt-5" style={{ color: 'white' }} >
@@ -62,7 +73,8 @@ const Profile = () => {
               </div>
 
               <button type="submit" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight: '20px' }}>Save Changes</button>
-              <button type="button" className="btn btn-secondary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Discard</button>
+              <button type="button" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' , marginRight: '20px' }}>Discard</button>
+              <button type="button" className="btn btn-primary mr-2" onClick={ openModal } style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Change Password</button>
             </form>
           </div>
         </div>
