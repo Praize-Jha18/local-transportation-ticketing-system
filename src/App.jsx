@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NoPage from "./pages/no-page.page";
 import Home from "./pages/home.page";
+import Services from "./pages/services.page";
 import Login from "./pages/login.page";
 import Navbar from "./components/navbar";
 import Profile from "./pages/profile.page";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/manage-bus" element={<Bus />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="*" element={<NoPage />} />
         </Route>

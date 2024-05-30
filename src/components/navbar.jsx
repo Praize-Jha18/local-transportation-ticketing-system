@@ -1,3 +1,4 @@
+import Footer from "./footer";
 import LiTag from "./li.tag";
 import { Outlet } from "react-router-dom";
 
@@ -5,7 +6,7 @@ import { Outlet } from "react-router-dom";
 function Navbar() {
   return(
     <>
-    <nav className="navbar navbar-expand-lg navbar-light "style={{backgroundColor:'#0B12AF'}}>
+    <nav className="navbar sticky-top navbar-expand-lg navbar-light "style={{backgroundColor:'#0B12AF'}}>
       <div className="container" >
         <a className="navbar-brand" href="/home" style={{color:'white'}}>Rapid Transit</a>
         <button className="navbar-toggler" style={{color:'white'}} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +27,7 @@ function Navbar() {
       </div>
     </nav>
     <Outlet />
+    <Footer/>
     </>
   );
 }

@@ -30,13 +30,13 @@ const openModal = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-4 text-center">
+        <div className="col-md-4 text-center" style={{marginBottom: '30px'}}>
           <div className="profile-img" style={{ backgroundColor: '#4B67E3', padding: '20px', borderRadius: '10px' }}>
             <img src={image} alt="Profile" style={{ borderRadius: '50%', width: '200px', height: '160px' }} /> <br/>
             <button className="btn btn-primary mt-3" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Edit</button>
           </div>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8"  style={{marginBottom: '30px'}}>
           <div className="profile-form" style={{ backgroundColor: '#4B67E3', padding: '30px', borderRadius: '10px' }}>
             <form>
               <div className="form-group mb-3">
@@ -73,9 +73,9 @@ const openModal = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight: '20px' }}>Save Changes</button>
-              <button type="button" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' , marginRight: '20px' }}>Discard</button>
-              <button type="button" className="btn btn-primary mr-2" onClick={ openModal } style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Change Password</button>
+              <button type="submit" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight: '20px' ,marginBottom: '10px'}}>Save Changes</button>
+              <button type="button" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' , marginRight: '20px' ,marginBottom: '10px'}}>Discard</button>
+              <button type="button" className="btn btn-primary mr-2" onClick={ openModal } style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' ,marginBottom: '10px' }}>Change Password</button>
               { showModal && <ChangePasswordModal title={ "Change password" }  show={ showModal } onCloseClicked={() => setShowModal(false)} /> }
             </form>
           </div>

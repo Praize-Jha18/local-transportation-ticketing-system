@@ -46,7 +46,7 @@
 
 body {
     background-color: #1832a9;
-    margin: 0;
+    /* margin-top: '500px'; */
     
 }
 
@@ -120,3 +120,116 @@ body {
   /* #root {
     background-color: #4B67E3;
   } */
+
+
+
+  .header-content {
+    padding: 100px 0;
+    background: url('header_background.jpg') no-repeat center center/cover;
+  }
+  
+  .services-section {
+    background-color: #1F21BF;
+  }
+  
+  .services-section .card {
+    border: none;
+  }
+  
+  .footer {
+    background-color: #0B12AF;
+    color: #FFFFFF;
+  }
+  
+  .footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+
+  .home-container {
+    background-color: #1F21BF;
+    color: #FFFFFF;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .header-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #0B12AF;
+  }
+  
+  .description {
+    margin: 20px 0;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+  }
+  
+  .buy-ticket-button {
+    background-color: #0B12AF;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .read-button {
+    color: #0B12AF;
+    border: 1px solid #0B12AF;
+  }
+  
+  .image-section {
+    text-align: center;
+  }
+  
+  .image-wrapper {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .main-image {
+    width: 80%;
+    border-radius: 10px;
+  }
+  
+  .color-codes {
+    margin-top: 30px;
+  }
+  
+  .color-code {
+    color: #3630B8;
+    font-weight: bold;
+  }
+  
+  .services-button {
+    background-color: #0B12AF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+
+  
+
+
+  .bg-image {
+    filter: blur(1px);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* @media (max-width: 500px) {
+  .mt-5 {
+    width: 80%;
+}
+} */
+.ho {
+    background-color: #186391;
+  }
