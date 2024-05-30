@@ -158,7 +158,10 @@ function SignUp() {
   }
 
   return (
-    <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
+    <>
+    
+
+    <div className="container mt-5" style={{ backgroundColor: '#3036d3',padding: '30px', borderRadius: '10px', color: 'white', width:'70%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
       <div className="form-group mb-3">
         <label>Select Bank</label>
@@ -283,6 +286,7 @@ function SignUp() {
       { showModal && <CustomModal title={ "Rapid Transit" } message={ modalText } show={ showModal } /> }
       <ToastContainer/>
     </div>
+    </>
   );
 
 }
