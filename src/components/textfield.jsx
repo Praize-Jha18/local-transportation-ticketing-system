@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-export const TextField = ({ label, placeHolder, type, defaultValue, onChange, disabled = false, length = 70 }) => {
+export const TextField = ({ label, placeHolder, type, defaultValue, onChange, disabled = false, length = 70, isNumeric = false }) => {
     
 	const [value, setValue] = useState(defaultValue)
 
     const handleChange = (event) => {
-        const text = event.target.value
+        var text = event.target.value
+        if (isNumeric) text = text.replace(/\D/, "")
         onChange(text)
         setValue(text)
     }
@@ -51,7 +52,8 @@ TextField.propTypes = {
     defaultValue: PropTypes.string,
     type: PropTypes.string,
     onChange: PropTypes.func,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    isNumeric: PropTypes.bool
 }
 
 
