@@ -14,12 +14,8 @@ const Profile = () => {
 const openModal = () => {
   console.log("clicked")
   setShowModal(true)
-  console.log()
-  // { showModal && <CustomModal title={ "Rapid Transit" } message={ "Loading... please wait" } show={ showModal } /> }
-  
-  
 }
- 
+
   return (
 
     <div className="container mt-5" style={{ color: 'white' }} >
