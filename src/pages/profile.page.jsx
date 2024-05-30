@@ -3,19 +3,20 @@ import { useState } from 'react';
 import { TextField } from '../components/textfield';
 import { isValidEmail } from '../utils/util';
 import image from '/src/assets/Busbg.jpg'
-import { CustomModal } from '../components/new-modal';
+import { ChangePasswordModal } from '../components/editpasswordmodal';
 const Profile = () => {
 
   const [email, setEmail] = useState("")
   const [phoneno, setphoneno] = useState("")
   const [name, setName] = useState("")
-
+  const [showModal, setShowModal] = useState(false)
 
 const openModal = () => {
   console.log("clicked")
-  return (
-    <CustomModal/>
-  )
+  setShowModal(true)
+  console.log()
+  // { showModal && <CustomModal title={ "Rapid Transit" } message={ "Loading... please wait" } show={ showModal } /> }
+  
   
 }
  
@@ -75,6 +76,7 @@ const openModal = () => {
               <button type="submit" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight: '20px' }}>Save Changes</button>
               <button type="button" className="btn btn-primary mr-2" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' , marginRight: '20px' }}>Discard</button>
               <button type="button" className="btn btn-primary mr-2" onClick={ openModal } style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none' }}>Change Password</button>
+              { showModal && <ChangePasswordModal title={ "Change password" }  show={ showModal } onCloseClicked={() => setShowModal(false)} /> }
             </form>
           </div>
         </div>
