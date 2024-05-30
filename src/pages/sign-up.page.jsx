@@ -28,6 +28,7 @@ function SignUp() {
   const [accountNumberDisabled, setAccountNumberDisabled] = useState(false)
   const [bankCode, setBankCode] = useState()
   const [showModal, setShowModal] = useState(false)
+  const [modalText, setModalText] = useState("")
 
   useEffect(() => {
     const mappedStates = []
@@ -37,6 +38,7 @@ function SignUp() {
 
   useEffect(() => {
     setShowModal(true)
+    setModalText(" Fetching Banks")
     axios.get(BANKS_URL, { headers: HEADER })
     .then(data => {
       const result = data.data.data
@@ -112,6 +114,7 @@ function SignUp() {
       }
       
       setShowModal(true)
+      setModalText("Processing Request")
 
       axios.post(
         'http://localhost:8080/api/v1/signup',{ ...reqBody },
@@ -274,7 +277,7 @@ function SignUp() {
         </div>
         <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }} onClick={ handleRegister }>Sign Up</button>
         <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
-        { showModal && <CustomModal title={ "Rapid Transit" } message={ "Loading... please wait" } show={ showModal } /> }
+        { showModal && <CustomModal title={ "Rapid Transit" } message={ modalText } show={ showModal } /> }
       <ToastContainer/>
     </div>
   );
