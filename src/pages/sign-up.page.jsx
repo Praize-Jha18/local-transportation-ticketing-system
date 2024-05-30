@@ -54,6 +54,30 @@ function SignUp() {
   }, [])
 
   useEffect(() => {
+    setFullName("")
+    if(accountNumber.length == 10 && bankCode) {
+      setAccountNumberDisabled(true)
+      setShowModal(true)
+      const url = `${RESOLVE_ACCOUNT_URL}account_number=${accountNumber}&bank_code=${bankCode.value}`
+      axios.get(
+        url, 
+        { headers: HEADER })
+      .then(data => {
+        const result = data.data
+        toast.success(result.message)
+        setFullName(result.data.account_name)
+        setShowModal(false)
+        setAccountNumberDisabled(false)
+      })
+      .catch(error => {
+        setAccountNumberDisabled(false)
+        setShowModal(false)
+        toast.error(error.response.data.message)
+      })
+    }
+  }, [accountNumber, bankCode])
+
+  useEffect(() => {
     if (state) {
       setLGA("")
       const mappedLGAs = []
@@ -131,31 +155,6 @@ function SignUp() {
     }
   }
 
-  useEffect(() => {
-    if(accountNumber.length == 10 && bankCode) {
-      setAccountNumberDisabled(true)
-      setShowModal(true)
-      const url = `${RESOLVE_ACCOUNT_URL}account_number=${accountNumber}&bank_code=${bankCode.value}`
-      axios.get(
-        url, 
-        { headers: HEADER })
-      .then(data => {
-        const result = data.data
-        toast.success(result.message)
-        setFullName(result.data.account_name)
-        setShowModal(false)
-        setAccountNumberDisabled(false)
-      })
-      .catch(error => {
-        setAccountNumberDisabled(false)
-        setShowModal(false)
-        toast.error(error.response.data.message)
-      })
-    } else {
-      setFullName("")
-    }
-  }, [accountNumber, bankCode])
-
   return (
     <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
@@ -176,6 +175,7 @@ function SignUp() {
             type={"text"}
             defaultValue={accountNumber}
             length={ 10 }
+            isNumeric={ true }
             disabled= { accountNumberDisabled }
             onChange={ (input) => setAccountNumber(input) }
           />
@@ -216,6 +216,7 @@ function SignUp() {
             placeHolder={"Enter Phone Number"}
             type={"tel"}
             defaultValue={phoneno}
+            isNumeric={ true }
             length={ 11 }
             onChange={
               (input) => { setphoneno(input) }
@@ -240,7 +241,7 @@ function SignUp() {
             defaultValue={state}
             onChange={setState}
             options={states}
-            isSearchable={false}
+            isSearchable={true}
           />
         </div>
         <div className="form-group mb-3">
@@ -250,7 +251,7 @@ function SignUp() {
             defaultValue={lga}
             onChange={setLGA}
             options={localGovernments}
-            isSearchable={false}
+            isSearchable={true}
           />
         </div>
         <div className="form-group mb-3">
