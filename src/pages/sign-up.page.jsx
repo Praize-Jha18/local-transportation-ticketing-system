@@ -160,127 +160,127 @@ function SignUp() {
   return (
     <div className="container mt-5" style={{ backgroundColor: '#3036d3', padding: '30px', borderRadius: '10px', color: 'white', width:'50%', marginBottom:'20px' }}>
       <h1 className="text-center mb-4">Sign Up</h1>
-        <div className="form-group mb-3">
-          <label htmlFor="formGender">Select Bank</label>
-          <Select
-            className="form-control"
-            // defaultValue={lga}
-            onChange={setBankCode}
-            options={banks}
-            isSearchable={true}
-          />
-        </div>
-        <div className="form-row mb-3">
-          <TextField
-            label={"Account Number"}
-            placeHolder={"Enter Account Number"}
-            type={"text"}
-            defaultValue={accountNumber}
-            length={ 10 }
-            isNumeric={ true }
-            disabled= { accountNumberDisabled }
-            onChange={ (input) => setAccountNumber(input) }
-          />
-        </div>
-        { fullName && <div className="form-row mb-3">
-          <TextFieldDisabled
-            label={"Full Name"}
-            placeHolder={"Enter Full Name"}
-            type={"text"}
-            value={fullName}
-          />
-        </div>}
-        <div className="form-group mb-3">
-          <TextField
-            label={"Date Of Birth"}
-            placeHolder={"Enter Date Of Birth"}
-            type={"date"}
-            defaultValue={DOB}
-            onChange={
-              (input) => { setDOB(input) }
-            }
-          />
-        </div>
-        <div className="form-group mb-3">
-          <TextField
-            label={"Email"}
-            placeHolder={"Enter Email"}
-            type={"email"}
-            defaultValue={email}
-            onChange={
-              (input) => { setEmail(input) }
-            }
-          />
-        </div>
-        <div className="form-group mb-3">
-          <TextField
-            label={"Phone"}
-            placeHolder={"Enter Phone Number"}
-            type={"tel"}
-            defaultValue={phoneno}
-            isNumeric={ true }
-            length={ 11 }
-            onChange={
-              (input) => { setphoneno(input) }
-            }
-          />
-        </div>
-        <div className="form-group mb-3">
+      <div className="form-group mb-3">
+        <label>Select Bank</label>
+        <Select
+          className="form-control"
+          // defaultValue={lga}
+          onChange={setBankCode}
+          options={banks}
+          isSearchable={true}
+        />
+      </div>
+      <div className="form-row mb-3">
         <TextField
-            label={"Address"} 
-            placeHolder={"Enter Home Address"} 
-            type={"text"}
-            defaultValue={address}
-            onChange={ 
-              (input) => { setaddress(input) }
-            }
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="formGender">Select State</label>
-          <Select
-            className="form-control"
-            defaultValue={state}
-            onChange={setState}
-            options={states}
-            isSearchable={true}
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="formGender">Local Governments</label>
-          <Select
-            className="form-control"
-            defaultValue={lga}
-            onChange={setLGA}
-            options={localGovernments}
-            isSearchable={true}
-          />
-        </div>
-        <div className="form-group mb-3">
+          label={"Account Number"}
+          placeHolder={"Enter Account Number"}
+          type={"text"}
+          defaultValue={accountNumber}
+          length={ 10 }
+          isNumeric={ true }
+          disabled= { accountNumberDisabled }
+          onChange={ (input) => setAccountNumber(input) }
+        />
+      </div>
+      { fullName && <div className="form-row mb-3">
+        <TextFieldDisabled
+          label={"Full Name"}
+          placeHolder={"Enter Full Name"}
+          type={"text"}
+          value={fullName}
+        />
+      </div>}
+      <div className="form-group mb-3">
         <TextField
-            label={"Create Password"} 
-            placeHolder={"Enter Password"} 
-            type={"password"}
-            defaultValue={password}
-            onChange={ 
-              (input) => { setPassword(input) }
-            }
-          />
-        </div>
-        <div className="form-group mb-3">
+          label={"Date Of Birth"}
+          placeHolder={"Enter Date Of Birth"}
+          type={"date"}
+          defaultValue={DOB}
+          onChange={
+            (input) => { setDOB(input) }
+          }
+        />
+      </div>
+      <div className="form-group mb-3">
         <TextField
-            label={"Confirm Password"} 
-            placeHolder={"Enter Password"} 
-            type={"password"}
-            defaultValue={confirmPassword}
-            onChange={ 
-              (input) => { setConfirmPassword(input) }
-            }
-          />
-        </div>
-        <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }} onClick={ handleRegister }>Sign Up</button>
-        <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
-        { showModal && <CustomModal title={ "Rapid Transit" } message={ modalText } show={ showModal } /> }
+          label={"Email"}
+          placeHolder={"Enter Email"}
+          type={"email"}
+          defaultValue={email}
+          onChange={
+            (input) => { setEmail(input) }
+          }
+        />
+      </div>
+      <div className="form-group mb-3">
+        <TextField
+          label={"Phone"}
+          placeHolder={"Enter Phone Number"}
+          type={"tel"}
+          defaultValue={phoneno}
+          isNumeric={ true }
+          length={ 11 }
+          onChange={
+            (input) => { setphoneno(input) }
+          }
+        />
+      </div>
+      <div className="form-group mb-3">
+      <TextField
+          label={"Address"} 
+          placeHolder={"Enter Home Address"} 
+          type={"text"}
+          defaultValue={address}
+          onChange={ 
+            (input) => { setaddress(input) }
+          }
+        />
+      </div>
+      <div className="form-group mb-3">
+        <label htmlFor="formGender">Select State</label>
+        <Select
+          className="form-control"
+          defaultValue={state}
+          onChange={setState}
+          options={states}
+          isSearchable={true}
+        />
+      </div>
+      <div className="form-group mb-3">
+        <label htmlFor="formGender">Local Governments</label>
+        <Select
+          className="form-control"
+          defaultValue={lga}
+          onChange={setLGA}
+          options={localGovernments}
+          isSearchable={true}
+        />
+      </div>
+      <div className="form-group mb-3">
+      <TextField
+          label={"Create Password"} 
+          placeHolder={"Enter Password"} 
+          type={"password"}
+          defaultValue={password}
+          onChange={ 
+            (input) => { setPassword(input) }
+          }
+        />
+      </div>
+      <div className="form-group mb-3">
+      <TextField
+          label={"Confirm Password"} 
+          placeHolder={"Enter Password"} 
+          type={"password"}
+          defaultValue={confirmPassword}
+          onChange={ 
+            (input) => { setConfirmPassword(input) }
+          }
+        />
+      </div>
+      <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'150px'  }} onClick={ handleRegister }>Sign Up</button>
+      <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'150px' }}>Login</button>
+      { showModal && <CustomModal title={ "Rapid Transit" } message={ modalText } show={ showModal } /> }
       <ToastContainer/>
     </div>
   );
