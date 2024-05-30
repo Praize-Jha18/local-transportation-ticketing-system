@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import { TextFieldDisabled } from './textfield';
+// import { TextFieldDisabled } from './textfield';
 
 export const CustomModal = ({ title, message, show }) => {
   return (
@@ -8,7 +8,7 @@ export const CustomModal = ({ title, message, show }) => {
       <div className="card-header text-center" style={{color:'blue', fontSize:'25px'}}>{ title }</div>
       <div className="card-body">
         <center> ... { message } ... </center>
-        <TextFieldDisabled value={ message } />
+        {/* <TextFieldDisabled value={ message } /> */}
       </div>
     </Modal>
   )
