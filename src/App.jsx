@@ -8,6 +8,7 @@ import Bus from "./pages/bus.page";
 // import Booking from "./pages/booking.page";
 import SignUp from "./pages/sign-up.page";
 import './App.css'
+import Booking from "./pages/booking.page";
 
 function App() {
   return(
@@ -23,7 +24,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/manage-bus" element={<Bus />} />
-          <Route path="/booking" element={<Home />} />
+          <Route path="/booking" element={<Booking />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
