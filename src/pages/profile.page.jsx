@@ -12,7 +12,6 @@ const Profile = () => {
   const [showModal, setShowModal] = useState(false)
 
 const openModal = () => {
-  console.log("clicked")
   setShowModal(true)
 }
 
