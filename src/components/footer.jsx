@@ -1,5 +1,6 @@
 import React from 'react';
 
+import LiTag from "./li.tag";
 const Footer = () => {
   return (
     <footer className="bg-primary text-white py-4 ">
@@ -12,9 +13,10 @@ const Footer = () => {
           <div className='col  md-4'>
             <h5>Important Links</h5>
             <ul>
-              <li><a href="#appointment" className="text-white">Home</a></li>
-              <li><a href="#booking" className="text-white">Booking</a></li>
-              <li><a href="#profile" className="text-white">Profile</a></li>
+            <LiTag label={"Home"} destination={"/home"} />
+        <LiTag label={"Services"} destination={"/services"} />
+        <LiTag label={"Login"} destination={"/login"} />
+        <LiTag label={"Sign Up"} destination={"/sign-up"} />
             </ul>
           </div>
           <div className='col  md-4'>

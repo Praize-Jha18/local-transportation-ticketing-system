@@ -2,12 +2,16 @@ import Footer from "./footer";
 import LiTag from "./li.tag";
 import { Outlet } from "react-router-dom";
 
+import image1 from '/src/assets/rapidlogo1.png'
+
+
 
 function Navbar() {
   return(
     <>
     <nav className="navbar sticky-top navbar-expand-lg navbar-light "style={{backgroundColor:'#0B12AF'}}>
       <div className="container" >
+        <img src={image1} style={{width:'100px', height:'70px'}}></img>
         <a className="navbar-brand" href="/home" style={{color:'white'}}>Rapid Transit</a>
         <button className="navbar-toggler" style={{color:'white'}} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon" ></span>
