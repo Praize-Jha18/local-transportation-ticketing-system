@@ -57,6 +57,7 @@ function SignUp() {
     setFullName("")
     if(accountNumber.length == 10 && bankCode) {
       setAccountNumberDisabled(true)
+      setModalText("Validating account details")
       setShowModal(true)
       const url = `${RESOLVE_ACCOUNT_URL}account_number=${accountNumber}&bank_code=${bankCode.value}`
       axios.get(
@@ -65,7 +66,8 @@ function SignUp() {
       .then(data => {
         const result = data.data
         toast.success(result.message)
-        setFullName(result.data.account_name)
+        const res = result.data.account_name.replace(/" {2,}"/, " ")
+        setFullName(res)
         setShowModal(false)
         setAccountNumberDisabled(false)
       })
@@ -106,7 +108,7 @@ function SignUp() {
       toast.error("Invalid full name")
     } else if (isValidAge(DOB)) {
       isValid = false
-      toast.error("The selected date is less than the minimum age:", MIN_YEARS)
+      toast.error(`The selected date is less than the minimum age: ${MIN_YEARS}`)
     } else if (!lga) {
       isValid = false
       toast.error("Kindly select local government")
