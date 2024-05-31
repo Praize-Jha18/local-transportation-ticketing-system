@@ -10,7 +10,7 @@ const Footer = () => {
             <h5>Rapid Transit</h5>
             <p>Leading in Transportation Comfort, Safety is assured.</p>
             
-        <img src={image1} style={{width:'100px', height:'70px'}}></img>
+        <a href='/home'><img src={image1} style={{width:'100px', height:'70px'}}></img></a>
           </div>
           <div className='col  md-4'>
             <h5>Important Links</h5>

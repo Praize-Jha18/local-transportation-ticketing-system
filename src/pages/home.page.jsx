@@ -19,7 +19,7 @@ const Home = () => {
       <div className="row d-flex justify-content-center align-items-center mt-5">
           <div className="col-12 col-md-6 mb-4">
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam dolorum ullam optio officiis dolorem aspernatur repellendus minus repellat laboriosam id, iusto quo, numquam neque saepe necessitatibus culpa nobis, nesciunt voluptates!
+            Welcome aboard Rapid Transit, where your journey matters as much as your destination! Our fleet of state-of-the-art buses ensures that you travel in comfort and style. With routes covering the bustling city of Lagos and beyond, we're dedicated to providing punctual, safe, and affordable transportation services. Whether you're commuting to work, exploring the city, or traveling long distances, **ComfyRide** is your reliable partner on the road. Book your next trip with us and experience the joy of traveling the Rapid way! 🚌✨
             </p>
           </div>
           <div className="col-12 col-md-6 mb-4">
