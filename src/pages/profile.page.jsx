@@ -16,7 +16,7 @@ const openModal = () => {
 }
 
   return (
-
+    <div className="d-flex flex-column min-vh-100">
     <div className="container mt-5" style={{ color: 'white' }} >
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>PROFILE</h1>
@@ -76,6 +76,7 @@ const openModal = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
 
 

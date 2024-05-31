@@ -1,20 +1,24 @@
 import React from 'react';
-
+import image1 from '../assets/rapidlogo1.png'
+import LiTag from "./li.tag";
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white py-4">
+    <footer className="bg-primary text-white py-4 ">
       <div className='container'>
         <div className='row'>
           <div className='col md-4'>
             <h5>Rapid Transit</h5>
             <p>Leading in Transportation Comfort, Safety is assured.</p>
+            
+        <img src={image1} style={{width:'100px', height:'70px'}}></img>
           </div>
           <div className='col  md-4'>
             <h5>Important Links</h5>
             <ul>
-              <li><a href="#appointment" className="text-white">Home</a></li>
-              <li><a href="#booking" className="text-white">Booking</a></li>
-              <li><a href="#profile" className="text-white">Profile</a></li>
+            <LiTag label={"Home"} destination={"/home"} />
+        <LiTag label={"Services"} destination={"/services"} />
+        <LiTag label={"Login"} destination={"/login"} />
+        <LiTag label={"Sign Up"} destination={"/sign-up"} />
             </ul>
           </div>
           <div className='col  md-4'>
