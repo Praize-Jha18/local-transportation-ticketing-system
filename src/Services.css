@@ -258,7 +258,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
+
 
 @media all and (max-width:1018px){
     .left_side{
@@ -321,6 +323,60 @@ main{
 
 
 
+}
+
+@media all and (max-width:714px) {
+
+    
+    .right_side{
+        display: none;
+
+    }
+
+    .description{
+        padding: 0 3rem;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5rem;
+    }
+
+    .description_card{
+        width: 30rem;
+        height: 25rem;
+
+    }
+
+    .triangle{
+        width: 0;
+        height: 0;
+        border-bottom: 100vh solid rgb(11, 18, 175) ;
+        border-right: 100vw solid rgba(87, 123, 240, 0.411) ;
+    }
+    
+
+}
+
+@media all and (max-width:454px) {
+
+    .content{
+        padding: 3rem 1rem 0 0;
+
+    }
+
+    .btn_group {
+        grid-template-columns: 10rem 5rem;
+        gap: 1rem;
+    }
+
+    .news{
+        display: none;
+    }
+
+    .copyright{
+        text-align: center;
+    }
+
+    
 }
 
 
