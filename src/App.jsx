@@ -9,6 +9,7 @@ import Bus from "./pages/bus.page";
 import SignUp from "./pages/sign-up.page";
 import './App.css'
 import Booking from "./pages/booking.page";
+import Services from "./pages/Services.page";
 
 function App() {
   return(
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/manage-bus" element={<Bus />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="*" element={<NoPage />} />

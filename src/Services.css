@@ -1,0 +1,258 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    overflow: hidden;
+}
+
+.bg_image{
+    height: calc(100vh - 3rem);
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+
+}
+/* 
+.overlay{
+    background-color: rgb(163, 162, 162);
+    position: absolute;
+    inset: 0;
+    opacity: 0.7;
+} */
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-bottom: 100vh solid rgb(11, 18, 175) ;
+    border-right: 100vw solid rgba(196, 194, 194, 0.411) ;
+}
+
+.content{
+    /* background-color: red; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.left_side{
+    flex: 1;
+    /* background-color: orange; */
+    padding: 5rem 0 0 10rem;
+    
+
+
+}
+
+.left_side > h1{
+    color: white;
+    font-weight: bolder;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    
+}
+
+.left_side > p {
+    color: white;
+    max-width: 26rem;
+    margin-bottom: 3rem;
+
+    
+}
+
+.right_side{
+    flex: 1;
+    /* background-color: yellow; */
+    display: flex;
+    /* align-items: scenter; */
+    justify-content: center;
+    padding: 5rem 0 0 0;
+}
+
+
+
+.right_side > img:first-child{
+    width: 20rem;
+    height: 15rem;
+    border-radius: 10rem;
+    margin-top: 10rem;
+    z-index: 50;
+
+}
+
+.right_side > img:last-child{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 3rem;
+    margin-left:-15rem ;
+
+
+}
+
+.btn_group {
+    display: grid;
+    grid-template-columns: 15rem 10rem;
+}
+
+.btn_group > button{
+    width: 10rem;
+    height: 3rem;
+    font-weight: bolder;
+    border-radius: .5rem;
+    
+}
+
+.btn_group > button:first-child{
+    color: rgb(11, 18, 175);
+    border: rgb(11, 18, 175) solid 2px;
+}
+
+.btn_group > button:last-child{
+    color: white;
+    background-color: rgb(11, 18, 175);
+    border: white solid 2px;
+}
+
+/* description */
+.description{
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+}
+
+.description_card{
+    width: 35rem;
+    height: 30rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.dotted_border{
+    /* background-color: aqua; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    border: rgb(11, 18, 175) dashed 2px;
+    border-radius: 1rem;
+}
+
+.dotted_border >  img{
+    width: 80%;
+    height: 80%;
+}
+
+.dotted_border > button{
+    position: absolute;
+    bottom: -1rem;
+    width: 101%;
+    height: 4rem;
+    background-color: rgba(11, 19, 175, 0.911);
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+
+.footer{
+    margin-top: 10rem;
+    background-color: rgb(11, 18, 175);
+    color: white;
+    padding: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer_container{
+    display: flex;
+    border-bottom: rgb(207, 205, 205) solid 1px;
+    padding-bottom: 2rem;
+}
+
+.company_details, .footer_links{
+    max-width: 15rem;
+
+}
+.company_details > h1{
+    margin-bottom: 2rem;
+}
+.footer_links > h6{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact_us > h6,
+.news > h6{
+    /* margin-bottom: 3rem; */
+
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.footer_links > h6{
+    text-align: center;
+    margin-left: -4rem;
+}
+
+.links{
+    
+}
+.links > li{
+    list-style: none;
+    margin-bottom: .5rem;
+
+
+}
+.links > li > a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    margin-right: 8rem;
+
+
+}
+
+.contact_us > p{
+    font-size: 14px;
+    margin-right: 8rem;
+    padding: 0;
+    margin-bottom: .5rem;
+
+}
+
+.input_container{
+    background-color: aliceblue;
+    width: 15rem;
+    height: 2.5rem;
+    border-radius: .5rem;
+}
+
+.input_container > input{
+    height: 2.5rem;
+    margin-left: 1rem;
+    border: none;
+    outline: none;
+    
+}
+
+.copyright{
+    /* background-color: red; */
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
