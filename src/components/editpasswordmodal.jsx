@@ -12,9 +12,9 @@ export const ChangePasswordModal = ({ title, show, onCloseClicked }) => {
     console.log(password)
 
     return (
-        <Modal isOpen={show} className={"card w-50 mx-auto my-5"} style={{ backgroundColor: '#4B62E3', borderRadius: '20px' }}>
+        <Modal isOpen={show} className={"card w-50 mx-auto my-5"} style={{ backgroundColor: '#4B62E3', borderRadius: '20px', inset: '50px'}}>
             <div className="card-header text-center" style={{ color: 'white', fontSize: '25px' }}>{title}</div>
-            <div className="card-body">
+            <div className="card-body" style={{color:' white'}}>
                 <TextField
                     label={"Old Password"}
                     placeHolder={"Enter old password"}
