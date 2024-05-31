@@ -68,7 +68,7 @@ body {
     margin: 10px;
     padding: 20px;
     /* background-color: #4B67E3; */
-    border: 1px solid rgb(189, 173, 173);
+    /* border: 1px solid rgb(189, 173, 173); */
     border-radius: 8px;
     text-align: center;
 }
@@ -485,7 +485,6 @@ main{
   outline: none;
   
 }
-
 .copyright{
   /* background-color: red; */
   width: 100%;
