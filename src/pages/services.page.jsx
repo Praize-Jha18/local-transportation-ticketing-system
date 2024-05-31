@@ -1,7 +1,7 @@
 import React from 'react';
 import image1 from '/src/assets/servicesbg.jpg'
 
-import image2 from '/src/assets/RapidImg.jpg'
+import bgImage from '/src/assets/RapidImg.jpg'
 const Services = () => {
   const services = [
     { id: 1, title: "Bus" },
@@ -40,22 +40,31 @@ const Services = () => {
         </div>
       </div>
     </div> */}
+<main>
 
+<section className='bg_image' style={{backgroundImage: `url(${bgImage})` , backgroundPosition: 'no-repeat'}}>
 
-    <div className="header-content text-center text-white bg-image" style={{backgroundImage : `url(${image2})`
-          }}> 
-        <div className='text-content' style={ { zIndex: 2 }}>
-        <h1>Rapid Transit</h1>
-        <p className="description text-center" >
-            Transportation, the lifeblood of our world, is the movement of people and goods that connects us all.
-            From the first steps taken by early humans to the high-speed trains of today, our modes of travel have constantly evolved.
-          </p>
-        <div className="button-group">
-            <button className="btn btn-primary buy-ticket-button" style={{color: 'white'}}>Buy Ticket</button>
-            <button className="btn btn-primary read-button">Read...</button>
-          </div>
-          </div> </div>
-        
+<div className='overlay'></div>
+<div className='triangle'>
+    <div className='content'>
+    <div className='left_side'>
+        <h1>RAPID <br /> TRANSIT</h1>
+        <p>Transportation, the lifehood of our world, is the movement of the people and goods that connects us all.expand_more From the first steps taken by early humans to the high to the high-speed trains of today, our modes of travel have constantly evolved.</p>
+        <div className='btn_group'>
+            <button>Buy Ticket</button>
+            <button>Read...</button>
+        </div>
+    </div>
+    <div className='right_side'>
+        <img src={bgImage} alt="bus-image" />
+        <img src={bgImage} alt="bus-image" />
+
+    </div>
+</div>
+
+</div>
+
+</section>
   
 
     <section className="services-section py-5">
@@ -76,6 +85,7 @@ const Services = () => {
         </div>
       </div>
     </section>
+    </main>
     </>
   );
 }
