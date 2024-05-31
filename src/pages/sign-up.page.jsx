@@ -276,7 +276,7 @@ function SignUp() {
           />
         </div>
         <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none', marginRight:'20px', width:'100px' ,marginBottom: '30px' }} onClick={ handleRegister }>Sign Up</button>
-        <button className="btn btn-primary" style={{ backgroundColor: '#FFFFFF', color: '#4B67E3', border: 'none'  ,width:'100px',marginBottom: '30px' }}>Login</button>
+
         { showModal && <CustomModal title={ "Rapid Transit" } message={ "Loading... please wait" } show={ showModal } /> }
       <ToastContainer/>
     </div>
