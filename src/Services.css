@@ -12,6 +12,7 @@ main{
     object-fit: cover;
     object-position: top;
     position: relative;
+    background-repeat: no-repeat;
 
 }
 /* 
@@ -120,6 +121,8 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 3rem;
+    align-items: center;
+    justify-items: center;
 }
 
 .description_card{
@@ -255,4 +258,123 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media all and (max-width:1018px){
+    .left_side{
+
+        padding: 5rem 0 0 12%;
+
+    }
+
+    .right_side > img:first-child{
+        width: 15rem;
+        height: 12rem;
+        border-radius: 16rem;
+        margin-top: 10rem;
+        z-index: 50;
+    
+    }
+    
+    .right_side > img:last-child{
+        width: 17rem;
+        height: 17rem;
+        border-radius: 3rem;
+        margin-left:-11rem ;
+    
+    
+    }
+
+    
+    .description{
+        padding: 0 3rem;
+
+        row-gap: 3rem;
+    }
+    
+    .description_card{
+        width: 20rem;
+        height: 15rem;
+        padding-top: 3rem;
+    }
+
+    .company_details{
+        display: none;
+    }
+    
+
+.links > li > a{
+    margin-right: 4rem;
+
+
+}
+
+.contact_us > p{
+    margin-right: 4rem;
+
+
+}
+
+.footer_links > h6{
+    margin-left: 0rem;
+}
+
+
+
+}
+
+
+@media all and (min-width:1531px) {
+    .left_side{
+
+        padding: 15rem 0 0 16rem;
+        
+    
+    
+    }
+
+    .right_side{
+        padding: 15rem 0 0 0;
+    }
+
+    .right_side > img:first-child{
+        width: 26rem;
+        height: 21rem;
+        border-radius: 16rem;
+        margin-top: 10rem;
+        z-index: 50;
+    
+    }
+    
+    .right_side > img:last-child{
+        width: 26rem;
+        height: 26rem;
+        border-radius: 3rem;
+        margin-left:-15rem ;
+    
+    
+    }
+    
+    
+}
+
+@media all and (min-width:1964px) {
+    .left_side{
+        padding: 15rem 0 0 25%;
+    
+    }
+
+    .right_side{
+        padding: 15rem 15% 0 0;
+    }
+
+    .bg_image{
+        /* width: 100rem; */
+    }
+
+    .description{
+        padding: 0 21%;
+
+    }
+    
 }
